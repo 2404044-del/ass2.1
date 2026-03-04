@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sunrise Care Hospital | Patient Registration</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <!-- Typography-only logo -->
+      <div class="logo">Sunrise Care Hospital</div>
+      <div class="tagline">Patient Registration Portal</div>
+    </div>
+    <div class="badge">Secure Intake</div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>Register Patient</h1>
+      <p class="subtext">Fill in the details below. Fields marked <span class="req">*</span> are required.</p>
+
+      <form id="regForm" novalidate>
+        <div class="grid">
+          <div class="field">
+            <label>Full Name <span class="req">*</span></label>
+            <input name="fullName" type="text" placeholder="e.g., Amina Wanjiku" required />
+            <small class="hint">As it appears on ID.</small>
+          </div>
+
+          <div class="field">
+            <label>National ID / Passport</label>
+            <input name="idNumber" type="text" placeholder="Optional" />
+          </div>
+
+          <div class="field">
+            <label>Phone Number <span class="req">*</span></label>
+            <input name="phone" type="tel" placeholder="e.g., +2547..." required />
+          </div>
+
+          <div class="field">
+            <label>Email</label>
+            <input name="email" type="email" placeholder="Optional" />
+          </div>
+
+          <div class="field">
+            <label>Date of Birth <span class="req">*</span></label>
+            <input name="dob" type="date" required />
+          </div>
+
+          <div class="field">
+            <label>Gender <span class="req">*</span></label>
+            <select name="gender" required>
+              <option value="">Select…</option>
+              <option>Female</option>
+              <option>Male</option>
+              <option>Other</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Address / Location</label>
+            <input name="address" type="text" placeholder="e.g., Ruaka, Kiambu" />
+          </div>
+
+          <div class="field">
+            <label>Department <span class="req">*</span></label>
+            <select name="department" required>
+              <option value="">Select…</option>
+              <option>Outpatient</option>
+              <option>Emergency</option>
+              <option>Dental</option>
+              <option>Paediatrics</option>
+              <option>Maternity</option>
+              <option>Laboratory</option>
+              <option>Radiology</option>
+              <option>Pharmacy</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field span2">
+            <label>Reason for Visit <span class="req">*</span></label>
+            <textarea name="reason" rows="3" placeholder="Brief description…" required></textarea>
+          </div>
+
+          <div class="field">
+            <label>Preferred Visit Date</label>
+            <input name="visitDate" type="date" />
+          </div>
+
+          <div class="field">
+            <label>Insurance Provider</label>
+            <input name="insurance" type="text" placeholder="Optional" />
+          </div>
+
+          <div class="field">
+            <label>Next of Kin Name</label>
+            <input name="nokName" type="text" placeholder="Optional" />
+          </div>
+
+          <div class="field">
+            <label>Next of Kin Phone</label>
+            <input name="nokPhone" type="tel" placeholder="Optional" />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" id="saveDraftBtn" class="btn secondary">Save Draft (This Device)</button>
+          <button type="submit" class="btn primary">Submit Registration</button>
+        </div>
+
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Sunrise Care Hospital</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
